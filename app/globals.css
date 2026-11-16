@@ -8,16 +8,6 @@ body {
   padding: 0;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
 body {
   background: #f8f1e5;
   color: #173f3f;
@@ -55,7 +45,7 @@ a {
 
 .navbar-logo img {
   display: block;
-  width: 6rem;
+  width: 4rem;
   height: 4rem;
 }
 
@@ -124,7 +114,50 @@ a {
 }
 
 /* =========================
-   Smaller screens
+   Hero
+   ========================= */
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - 5.5rem);
+  overflow: hidden;
+}
+
+.hero-background {
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+
+  width: 32%;
+  margin-left: 31%;
+  padding-top: 3rem;
+
+  text-align: center;
+}
+
+.hero-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.hero-content p {
+  max-width: 30rem;
+  margin: 1.25rem auto 0;
+
+  color: #173f3f;
+  font-size: 1.2rem;
+  line-height: 1.45;
+}
+
+/* =========================
+   Smaller Screens
    ========================= */
 
 @media (max-width: 50rem) {
@@ -149,4 +182,137 @@ a {
   .signup-button {
     padding: 0.65rem 1.15rem;
   }
+
+  .hero-content {
+    width: 42%;
+    margin-left: 28%;
+    padding-top: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+}
+
+/* =========================
+   Get Started Card
+   ========================= */
+
+.get-started-card {
+  position: absolute;
+  top: 2rem;
+  right: 4rem;
+  z-index: 2;
+
+  width: 28rem;
+  padding: 2.25rem 2rem;
+
+  background: #f8f1e5;
+  border-radius: 2rem;
+
+  text-align: center;
+
+  box-shadow: 0 1rem 2.5rem rgba(23, 63, 63, 0.2);
+}
+
+.get-started-card h2 {
+  margin: 0;
+
+  color: #173f3f;
+  font-size: 2.25rem;
+  font-weight: 800;
+}
+
+.get-started-description {
+  margin: 1rem auto 1.5rem;
+
+  color: #173f3f;
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
+/* Form */
+
+.get-started-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Inputs */
+
+.input-field {
+  display: flex;
+  align-items: center;
+
+  height: 3rem;
+
+  border: 0.1rem solid #2b7373;
+  border-radius: 2rem;
+
+  background: #fffdf7;
+}
+
+.input-field span {
+  width: 3rem;
+
+  font-size: 1.1rem;
+}
+
+.input-field input {
+  flex: 1;
+
+  height: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #173f3f;
+
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.input-field input::placeholder {
+  color: #173f3f;
+}
+
+/* Button */
+
+.create-account-button {
+  height: 3.25rem;
+  margin-top: 0.5rem;
+
+  border: none;
+  border-radius: 2rem;
+
+  background: #0f6666;
+  color: white;
+
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.create-account-button:hover {
+  background: #174f4f;
+}
+
+/* Login */
+
+.login-prompt {
+  margin-top: 1rem;
+
+  color: #173f3f;
+  font-size: 0.95rem;
+}
+
+.login-prompt a {
+  color: #173f3f;
+  font-weight: 700;
+  text-decoration: underline;
 }
