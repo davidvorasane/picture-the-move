@@ -27,7 +27,6 @@ export default function Footer() {
       <div className="footer-decoration">
         <span>⌁⌁⌁</span>
         <span>▲ ▲</span>
-        <span>🌲 🌲</span>
       </div>
     </footer>
   );
