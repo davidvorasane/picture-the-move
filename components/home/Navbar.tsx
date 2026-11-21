@@ -1,7 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Navbar() {
+type AuthMode = "signup" | "login";
+
+type NavbarProps = {
+  authMode: AuthMode;
+  onAuthModeChange: (mode: AuthMode) => void;
+};
+
+export default function Navbar({
+  authMode,
+  onAuthModeChange,
+}: NavbarProps) {
   return (
     <header className="navbar">
       <div className="navbar-logo">
@@ -22,13 +32,25 @@ export default function Navbar() {
       </nav>
 
       <div className="nav-actions">
-        <Link href="/login" className="login-link">
+        <button
+          type="button"
+          className={`login-link ${
+            authMode === "login" ? "active" : ""
+          }`}
+          onClick={() => onAuthModeChange("login")}
+        >
           Log In
-        </Link>
+        </button>
 
-        <Link href="/signup" className="signup-button">
+        <button
+          type="button"
+          className={`signup-button ${
+            authMode === "signup" ? "active" : ""
+          }`}
+          onClick={() => onAuthModeChange("signup")}
+        >
           Sign Up
-        </Link>
+        </button>
       </div>
     </header>
   );

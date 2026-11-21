@@ -82,35 +82,63 @@ a {
 }
 
 .login-link {
-  font-size: 1rem;
-  font-weight: 500;
+  padding: 0.75rem 1.5rem;
 
-  transition: opacity 0.2s ease;
+  border: 0.1rem solid #173f3f;
+  border-radius: 2rem;
+
+  background: transparent;
+  color: #173f3f;
+
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .login-link:hover {
-  opacity: 0.6;
+  background: #e7eeee;
+}
+
+.login-link.active {
+  background: #173f3f;
+  color: #f8f1e5;
 }
 
 .signup-button {
   padding: 0.75rem 1.5rem;
 
+  border: 0.1rem solid #173f3f;
   border-radius: 2rem;
 
-  background: #173f3f;
-  color: #f8f1e5;
+  background: transparent;
+  color: #173f3f;
 
+  font-family: inherit;
   font-size: 1rem;
   font-weight: 600;
 
+  cursor: pointer;
+
   transition:
     background 0.2s ease,
+    color 0.2s ease,
     transform 0.2s ease;
 }
 
 .signup-button:hover {
-  background: #285b5b;
-  transform: translateY(-0.0625rem);
+  background: #e7eeee;
+}
+
+.signup-button.active {
+  background: #173f3f;
+  color: #f8f1e5;
 }
 
 /* =========================
@@ -281,7 +309,8 @@ a {
 
 /* Button */
 
-.create-account-button {
+.auth-button {
+  width: 100%;
   height: 3.25rem;
   margin-top: 0.5rem;
 
@@ -298,8 +327,43 @@ a {
   cursor: pointer;
 }
 
-.create-account-button:hover {
+.auth-button:hover {
   background: #174f4f;
+}
+
+.auth-switch {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+  color: #173f3f;
+
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+
+  text-decoration: underline;
+
+  cursor: pointer;
+}
+
+.auth-switch:hover {
+  opacity: 0.7;
+}
+
+.auth-error {
+  margin: 0;
+  color: #9b3d3d;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.auth-success {
+  margin: 0;
+  color: #2f6b3f;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 /* Login */
@@ -442,4 +506,47 @@ a {
 
 .footer-decoration span:last-child {
   font-size: 1.5rem;
+}
+
+.profile-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 3rem;
+  background: #f8f1e5;
+}
+
+.profile-card {
+  width: min(100%, 40rem);
+  padding: 3rem;
+  border-radius: 2rem;
+  background: #fffdf7;
+  text-align: center;
+  box-shadow: 0 1rem 2.5rem rgba(23, 63, 63, 0.12);
+}
+
+.profile-eyebrow {
+  margin: 0 0 0.75rem;
+  color: #0f6666;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.profile-card h1 {
+  margin: 0 0 1rem;
+  color: #173f3f;
+  font-size: 2.5rem;
+}
+
+.profile-card p {
+  color: #173f3f;
+  line-height: 1.5;
+}
+
+.profile-note {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 0.0625rem solid rgba(23, 63, 63, 0.15);
 }

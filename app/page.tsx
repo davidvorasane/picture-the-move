@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Navbar from "@/components/home/Navbar";
 import GetStarted from "@/components/home/GetStarted";
@@ -5,9 +8,14 @@ import Features from "@/components/home/Features";
 import Footer from "@/components/home/Footer";
 
 export default function Home() {
+  const [authMode, setAuthMode] = useState<"signup" | "login">("signup");
+
   return (
     <>
-      <Navbar />
+      <Navbar
+        authMode={authMode}
+        onAuthModeChange={setAuthMode}
+      />
 
       <main>
         <section className="hero">
@@ -35,7 +43,10 @@ export default function Home() {
             </p>
           </div>
 
-          <GetStarted />
+          <GetStarted
+            authMode={authMode}
+            onAuthModeChange={setAuthMode}
+          />
         </section>
 
         <Features />
